@@ -1,6 +1,8 @@
 import wollok.game.*
 import hector.*
+import oso.*
 import cultivos.*
+import granjajuego.*
 
 program farmville {
 	//  CONFIG	
@@ -10,9 +12,20 @@ program farmville {
 	game.ground("ground.png")
 
 	//  VISUALES
- 	game.addVisualCharacter(hector)
- 	game.addVisualIn(new Maiz(), game.at(1, 1))
- 	
+
+ 	granjajuego.configurarPersonajes()
+ 
+ 
+//	keyboard.left().onPressDo({ hector.moveteALaIzquierda()})
+	// CONTROL DE TECLADO
+
+	granjajuego.configurarColisiones()
+	
+	granjajuego.configurarTeclado()
+	
+	granjajuego.configurarAcciones()
+	
  	//  COMIENZA
 	game.start()
+	
 }
